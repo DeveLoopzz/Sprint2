@@ -28,8 +28,8 @@
 /* 28 */ db.restaurant.find({"address.street": {$ne: null}})
 /* 29 */ db.restaurant.find({"address.coord": {$type : "double"}})
 /* 30 */ db.restaurant.find({$expr:{ $eq: [{$mod:[{ $toInt:"$grades.score"}, 7]}, 0]}})
-/* 31 */
-/* 32 */
+/* 31 */ db.restaurant.find({"name": {$regex: /mon/i}}, {"name": 1, "borough": 1, "address.coord.1": 1, "address.coord.0": 1, "cuisine": 1})
+/* 32 */ db.restaurant.find({"name": {$regex: /^Mad/i}}, {"name": 1, "borough": 1, "address.coord.1": 1, "address.coord.0": 1, "cuisine": 1})
 
 
 
